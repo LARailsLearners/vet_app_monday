@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @customer.name %>
+  <% @customer.pets.each do |pet| %>
+    <%= pet.pet_name %>
+    <%= pet.schedules.last.date_of_visit %>
+     <!-- # next_appointment -->
+    <%= pet.schedules.last.reason %>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_customer_path(@customer) %> |
+<%= link_to 'Back', customers_path %>

@@ -4,5 +4,12 @@ class Pet < ActiveRecord::Base
   validates :pet_type, inclusion: { in: %w(dog cat bird),
     message: "%{value} must be dog, cat or bird" }
   validates :age, :weight, :last_vist, presence:true
+
+  belongs_to :customer
+  has_many :schedules
+
+  def next_appointment
+    # next week
+  end
 end
 

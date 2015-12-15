@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151215041125) do
+ActiveRecord::Schema.define(version: 20151215045307) do
+
+  create_table "customers", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "doctors", force: :cascade do |t|
     t.string   "name"
@@ -32,8 +38,9 @@ ActiveRecord::Schema.define(version: 20151215041125) do
     t.integer  "age"
     t.integer  "weight"
     t.date     "last_vist"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "customer_id"
   end
 
   create_table "schedules", force: :cascade do |t|
@@ -44,6 +51,7 @@ ActiveRecord::Schema.define(version: 20151215041125) do
     t.string   "reason"
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
+    t.integer  "pet_id"
   end
 
 end

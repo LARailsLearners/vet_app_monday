@@ -11,4 +11,6 @@ class Schedule < ActiveRecord::Base
     errors.add(:date_of_visit, "can't be in the past") if
       !date_of_visit.blank? and date_of_visit < Date.today
   end
+
+  belongs_to :pet
 end
